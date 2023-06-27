@@ -28,9 +28,11 @@ public class CustomerController {
     public ResponseEntity<List<CustomerDTO>> getAllCustomers() {
         log.info("Inside the CustomerController.getAllCustomers");
         List<CustomerDTO> customerDTOList = null;
+
         try {
             customerDTOList = customerService.findAll();
             log.info("Customer List:{}", customerDTOList);
+            
         } catch (
                 CustomerDetailsNotFound ex1) {
             log.error("Customer Details Not found", ex1);

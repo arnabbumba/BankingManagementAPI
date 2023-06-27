@@ -32,6 +32,7 @@ public class CustomerController {
         try {
             customerDTOList = customerService.findAll();
             log.info("Customer List:{}", customerDTOList);
+            
         } catch (
                 CustomerDetailsNotFound ex1) {
             log.error("Customer Details Not found", ex1);
